@@ -23,32 +23,36 @@ resource "aws_vpc" "sample_vpc" {
 
 # Step 3: Create 2 public and 2 private subnets in the VPC
 resource "aws_subnet" "public_subnet_1" {
-  cidr_block = "10.0.1.0/24"
-  vpc_id     = aws_vpc.sample_vpc.id
+  cidr_block        = "10.0.1.0/24"
+  vpc_id            = aws_vpc.sample_vpc.id
+  availability_zone = "eu-west-3a"
   tags = {
     "Name" : "public subnet 1"
   }
 }
 
 resource "aws_subnet" "public_subnet_2" {
-  cidr_block = "10.0.2.0/24"
-  vpc_id     = aws_vpc.sample_vpc.id
+  cidr_block        = "10.0.2.0/24"
+  vpc_id            = aws_vpc.sample_vpc.id
+  availability_zone = "eu-west-3b"
   tags = {
     "Name" : "public subnet 2"
   }
 }
 
 resource "aws_subnet" "private_subnet_1" {
-  cidr_block = "10.0.3.0/24"
-  vpc_id     = aws_vpc.sample_vpc.id
+  cidr_block        = "10.0.3.0/24"
+  vpc_id            = aws_vpc.sample_vpc.id
+  availability_zone = "eu-west-3a"
   tags = {
     "Name" : "private subnet 1"
   }
 }
 
 resource "aws_subnet" "private_subnet_2" {
-  cidr_block = "10.0.4.0/24"
-  vpc_id     = aws_vpc.sample_vpc.id
+  cidr_block        = "10.0.4.0/24"
+  vpc_id            = aws_vpc.sample_vpc.id
+  availability_zone = "eu-west-3b"
   tags = {
     "Name" : "private subnet 2"
   }
